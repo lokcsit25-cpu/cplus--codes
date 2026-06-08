@@ -3,10 +3,7 @@ can lift at least 50 kg weight and are between 18 to 24 yrs of age. However, if 
 have more than 4 yrs of experience in the field, they can qualify even if they can lift just 35 kg
 and are over 24 yrs of age. Write a program in C++ to input the information of applicants and
 check if they meet the required credentials for the job.
-(2) Write a program to output the nth Fibonacci number using iteration.
-(3) Write a program that prompts a student to enter the marks they obtained in Object
-Oriented Programming. Output the corresponding grade they obtained. (0-59 = F, 60-69 = D,
-70-79 = C, 80-89 = B, 90-100 = A) */
+ */
 #include<iostream>
 using namespace std;
 int main()
