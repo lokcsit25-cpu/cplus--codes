@@ -15,7 +15,7 @@ int main(){
     {
         cout<<"Your grade is D"<<endl;
     }
-    else if(marks>=70 && marks<+79)
+    else if(marks>=70 && marks<=79)
     {
         cout<<"Your grade is C"<<endl;
     }
