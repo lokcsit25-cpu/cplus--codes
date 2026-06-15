@@ -53,7 +53,6 @@
 // }
 // to find the difference of two sets
 // #include <stdio.h>
-// using namespace std;
 // int main(){
 // 	int Uset[10]={10,11,12,13,14,15,16,17,18,19};
 //  	int setA[4]={11,12,13,18};
@@ -76,7 +75,6 @@
 // }
 // to find inverse of a set
 // #include <stdio.h>
-// using namespace std;
 // int main(){
 // 	int Uset[10]={10,11,12,13,14,15,16,17,18,19};
 //  	int setA[4]={11,12,13,18};
@@ -98,7 +96,6 @@
 // }
 // to find cross product of two sets
 // #include <stdio.h>
-// using namespace std;
 // int main(){
 // 	int Uset[10]={10,11,12,13,14,15,16,17,18,19};
 //  	int setA[4]={11,12,13,18};
@@ -115,7 +112,6 @@
 // floor and ceiling function use
 // #include <stdio.h>
 // #include <math.h>
-// using namespace std;
 // int main(){
 // 	float num;
 // 	printf("Enter a number: ");
