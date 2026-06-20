@@ -1,3 +1,6 @@
+/*Create a class for and account holder with data members as accountNo,
+ accountHolderName and balance.create two methods to store and retrieve 
+ these values for 3 customers*/
 #include <iostream>
 #include <iomanip>
 using namespace std;
