@@ -13,20 +13,20 @@ int main(){
     cin >> choice;
 
     switch(choice){
-        case 1: {
+        case 1: 
             int a,b,c;
             cout << "Enter three integers: ";
             cin >> a >> b >> c;
             calculate(a,b,c);
             break;
-        }
-        case 2: {
-            float a,b,c;
+        
+        case 2: 
+            float num1,num2,num3;
             cout << "Enter three floating point numbers: ";
-            cin >> a >> b >> c;
-            calculate(a,b,c);
+            cin >> num1 >> num2 >> num3;
+            calculate(num1,num2,num3);
             break;
-        }
+        
         default:
             cout << "Invalid choice!" << endl;
     }
