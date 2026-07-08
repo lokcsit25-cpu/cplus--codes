@@ -78,12 +78,12 @@ int main() {
 
     int choice;
     do {
-        cout << "\nBanking Menu:\n";
-        cout << "1. Deposit amount\n";
-        cout << "2. Withdraw amount\n";
-        cout << "3. Display Balance\n";
-        cout << "4. Display Total Operations\n";
-        cout << "5. Exit\n";
+        cout <<endl<< "Banking Menu:" << endl;
+        cout << "1. Deposit amount"<<endl;
+        cout << "2. Withdraw amount"<<endl;
+        cout << "3. Display Balance"<<endl;
+        cout << "4. Display Total Operations"<<endl;
+        cout << "5. Exit"<<endl;
         cout << "Enter your choice: ";
         cin >> choice;
 
