@@ -1,156 +1,160 @@
-// //wap to read and display information about an author.An author is a person.(use private derivation).
-// #include<iostream>
-// using namespace std;
-// class person{
-//     private:
-//         string awards;
-//         string nationality;
-//         string genre;
-//     public:
-//         void setter()
-//         {
-//             cout<<"Enter awards` of author: ";
-//             getline(cin>>ws,awards);
-//             cout<<"Enter nationality of author: ";
-//             getline(cin>>ws,nationality);
-//             cout<<"Enter genre of author: ";
-//             getline(cin>>ws,genre);
-//         }
-//         void getter()
-//         {
-//             cout<<"Awards: "<<awards<<endl<<"Nationality: "<<nationality<<endl<<"Genre: "<<genre<<endl;
-//         }
-// };
-// class author:private person{
-// private:
-//     string name;
-//     int age;
-// public:
-//     void callsetter(){
-//         setter();
-//     }
-//     void callgetter(){
-//         getter();
-//     }
-
-//     void setdata()
-//     {
-//         cout<<"Enter name of author: ";
-//         getline(cin>>ws,name);
-//         cout<<"Enter age of author: ";
-//         cin>>age;
-//     }
-//     void getdata()
-//     {
-//         cout<<endl<<"name:  "<<name<<endl<<"age: "<<age<<endl;
-//     }
-// };
-
-
-    
-
-// int main(){
-//     author a;
-//     a.callsetter();
-//     a.setdata();
-//     a.callgetter();
-//     a.getdata();
-//     return 0;
-// }
+//#include <iostream>
+//#include <string>
+//using namespace std;
+//
+//class Person {
+//private:
+//    string name;
+//    int age;
+//
+//public:
+//    void readPerson() {
+//        cout << "Enter name of the person: ";
+//        getline(cin >> ws, name);   
+//        cout << "Enter age of the person: ";
+//        cin >> age;
+//    }
+//
+//    void displayPerson() {
+//        cout << "Name: " << name << endl;
+//        cout << "Age: " << age << endl;
+//    }
+//};
+//
+//class Author : private Person {
+//private:
+//    string nationality;
+//    string genre;
+//
+//public:
+//    void readAuthor() {
+//        readPerson();
+//        cout << "Enter nationality: ";
+//        getline(cin >> ws, nationality);  
+//        cout << "Enter genre: ";
+//        getline(cin >> ws, genre);        
+//    }
+//
+//    void displayAuthor() {
+//        displayPerson();
+//        cout << "Nationality: " << nationality << endl;
+//        cout << "Genre: " << genre << endl;
+//    }
+//};
+//
+//int main() {
+//    Author a;
+//    cout << "Enter author information:\n";
+//    a.readAuthor();
+//
+//    cout << "\nAuthor details:\n";
+//    a.displayAuthor();
+//
+//    return 0;
+//}
 
 //wap to demonstrate the following scenario of hierarchical inheritance.
 //vehicle->car
 //vehicle->Boat
 //vehicle->Aeroplane
-
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
-class Vehicle{
-    private:
-    string type;
-    string color;
-    string medium_of_travel;
-    public:
-    void setter(){
-    cout<<"Enter type of vehicle: ";
-    getline(cin>>ws,type);
-    cout<<"Enter color of vehicle: ";
-    getline(cin>>ws,color);
-    cout<<"Enter medium of travelling: ";
-    getline(cin>>ws,medium_of_travel);
-}
-    void getter(){
-    cout<<"type:"<<type<<endl<<" color:"<<color<<endl<<" medium of travel:"<<medium_of_travel<<endl<<endl;
-    }
-};
-class car:public Vehicle{
-    private:
-    string cname;
+
+// Base class
+class Vehicle {
+protected:
     string brand;
-    public:
-    void input(){
-        cout<<"Enter Car name: ";
-        getline(cin>>ws,cname);
-        cout<<"Enter Brand name: ";
-        getline(cin>>ws,brand);
+    int speed;
+
+public:
+    void readVehicle() {
+        cout << "Enter brand: ";
+        getline(cin >> ws, brand);
+        cout << "Enter speed (km/h): ";
+        cin >> speed;
     }
-    void output(){
-        cout<<"car name:"<<cname<<endl<<" Brand name:"<<brand<<endl;
+
+    void displayVehicle() {
+        cout << "Brand: " << brand << endl;
+        cout << "Speed: " << speed << " km/h" << endl;
     }
 };
 
-class Boat:public Vehicle{
-    private:
-    string bname;
-    string brand;
-    public:
-    void setdata(){
-        cout<<"Enter Boat name: ";
-        getline(cin>>ws,bname);
-        cout<<"Enter Brand name: ";
-        getline(cin>>ws,brand);
+// Derived class Car
+class Car : public Vehicle {
+private:
+    string carName;
+
+public:
+    void readCar() {
+        readVehicle();
+        cout << "Enter car name: ";
+        getline(cin >> ws, carName);
     }
-    void getdata(){
-        cout<<"Boat name:"<<bname<<endl<<" brand name:"<<brand<<endl;
+
+    void displayCar() {
+        displayVehicle();
+        cout << "Car Name: " << carName << endl;
     }
 };
 
-class Aeroplane:public Vehicle{
-    private:
-    string aeroname;
-    string brand;
-    public:
-    void setadata1(){
-        cout<<"Enter Aeroplane name: ";
-        getline(cin>>ws,aeroname);
-        cout<<"Enter Brand name: ";
-        getline(cin>>ws,brand);
+// Derived class Boat
+class Boat : public Vehicle {
+private:
+    string boatName;
+
+public:
+    void readBoat() {
+        readVehicle();
+        cout << "Enter boat name: ";
+        getline(cin >> ws, boatName);
     }
-    void getdata1(){
-        cout<<"Aeroplane name:"<<aeroname<<endl<<" brand name:"<<brand<<endl;
+
+    void displayBoat() {
+        displayVehicle();
+        cout << "Boat Name: " << boatName << endl;
     }
 };
 
-int main(){
-    car c;
-    c.input();
-    c.setter();
+// Derived class Aeroplane
+class Aeroplane : public Vehicle {
+private:
+    string planeName;
 
+public:
+    void readAeroplane() {
+        readVehicle();
+        cout << "Enter aeroplane name: ";
+        getline(cin >> ws, planeName);
+    }
+
+    void displayAeroplane() {
+        displayVehicle();
+        cout << "Aeroplane Name: " << planeName << endl;
+    }
+};
+
+int main() {
+    Car c;
     Boat b;
-    b.setdata();
-    b.setter();
-
     Aeroplane a;
-    a.setadata1();
-    a.setter();
 
-    c.output();
-    c.getter();
+    cout << "Enter Car Information: "<<endl;
+    c.readCar();
+    cout <<endl<< "Enter Boat Information: "<<endl;
+    b.readBoat();
+    cout <<endl<< "Enter Aeroplane Information: "<<endl;
+    a.readAeroplane();
+    
+    cout <<endl<< "Car Details: "<<endl;
+    c.displayCar();
+    cout <<endl<< "Boat Details: ";
+    b.displayBoat();
+    cout <<endl<< "Aeroplane Details: ";
+    a.displayAeroplane();
 
-    b.getdata();
-    b.getter();
- 
-    a.getdata1();
-    a.getter();
     return 0;
 }
+
+
