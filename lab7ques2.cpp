@@ -1,3 +1,8 @@
+//Write an object-oriented program for the following scenario. Make use of Virtual Class.
+//ElectronicDevice->Printer
+//ElectronicDevice->Scanner
+//Printer->PhotocopyMachine
+//Scanner->PhotocopyMachine
 #include <iostream>
 #include <string>
 using namespace std;
@@ -20,32 +25,22 @@ public:
 };
 
 class Printer : virtual public ElectronicDevice {
-private:
+protected:
     string printerType;
 public:
     void readPrinter() {
-        readDevice();
         cout << "Enter type of printer: ";
         getline(cin >> ws, printerType);
-    }
-    void displayPrinter() {
-        displayDevice();
-        cout << "Type of printer: " << printerType << endl;
     }
 };
 
 class Scanner : virtual public ElectronicDevice {
-private:
+protected:
     string scannerType;
 public:
     void readScanner() {
-        readDevice();
         cout << "Enter type of scanner: ";
         getline(cin >> ws, scannerType);
-    }
-    void displayScanner() {
-        displayDevice();
-        cout << "Type of scanner: " << scannerType << endl;
     }
 };
 
@@ -56,18 +51,14 @@ public:
     void readPhotocopyMachine() {
         // Only one call to readDevice() due to virtual inheritance
         readDevice();
-        cout << "Enter type of printer: ";
-        string printerType;
-        getline(cin >> ws, printerType);
-
-        cout << "Enter type of scanner: ";
-        string scannerType;
-        getline(cin >> ws, scannerType);
-
+        readPrinter();
+        readScanner();
         cout << "Enter type of photocopy machine: ";
         getline(cin >> ws, photocopyType);
     }
+
     void displayPhotocopyMachine() {
+        cout << endl << "Details of electronic device:" << endl;
         displayDevice();
         cout << "Type of photocopy machine: " << photocopyType << endl;
     }
@@ -79,3 +70,4 @@ int main() {
     p.displayPhotocopyMachine();
     return 0;
 }
+

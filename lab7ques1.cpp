@@ -1,3 +1,4 @@
+//(1) Using a friend function, print the sum of private data members of two classes.
 #include<iostream>
 using namespace std;
 
