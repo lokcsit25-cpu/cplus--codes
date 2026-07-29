@@ -7,7 +7,7 @@ private:
     float num;
 public:
     void setValue() {
-        cout << "Enter a number: ";
+        cout << "Enter any number: ";
         cin >> num;
     }
 
@@ -26,6 +26,6 @@ int main() {
     d1.setValue();
     d2.setValue();
     float result = d1 / d2;
-    cout << "Result of division: " << result << endl;
+    cout << "Result of division of given two numbers: " << result << endl;
     return 0;
 }
